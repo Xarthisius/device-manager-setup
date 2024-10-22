@@ -1,6 +1,15 @@
 # device-manager-setup
 Contains yaml files to setup /dev/fuse device mount in kubernetes
 
+## Installation
+
+```
+kubectl label node <node_name> smarter-device-manager=enabled || /bin/true
+kubectl apply -f 01-smarter-device-manager-ns.yaml
+kubectl apply -f 02-smarter-device-manager-configmap.yaml
+kubectl apply -f 03-smarter-device-manager-ds-with-configmap.yaml
+```
+
 ### Example
 
 ```
